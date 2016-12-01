@@ -1,0 +1,6 @@
+name: "Capse"
+description: "Tema desarrollado para Capse basado en Octaskin de Laratify."
+author: ANGURO
+homepage: "https://www.laratify.com/"
+code: capse
+form: config/fields.yaml

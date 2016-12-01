@@ -1,0 +1,36 @@
+title = "Registro Cuidador"
+url = "/cuidador/nuevo"
+layout = "defecto"
+is_hidden = 0
+==
+<!-- header -->
+<section id="lt-header" class="lt-section lt-section-fullwidth section">
+  <div class="lt-container container">
+    <div class="lt-content lt-header-content">
+      <div class="lt-row row">
+      <div class="lt-col col s12">
+        <div class="lt-parallax-header parallax-container" style="height: 400px;">
+          <div class="lt-parallax parallax"><img src="{{ 'assets/img/pag/cuidador/header.jpg'|theme }}" alt="image"></div>
+          <div class="lt-parallax-content">
+            <div class="valign-wrapper" style="height: 400px;">
+              <div class="valign">
+                <h2 class="lt-title">Registro Cuidador</h2>
+                <p class="lt-subtitle flow-text">Bienvenido a nuestra plataforma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<!-- contenido -->
+<section id="lt-mainpage" class="lt-section section">
+  <div class="lt-container container">
+    <div class="lt-content lt-mainpage-content">
+      
+          {% partial "formulario/registro" %}
+    </div>
+  </div>
+</section>

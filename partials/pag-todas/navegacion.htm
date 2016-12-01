@@ -1,0 +1,45 @@
+<!-- navegacion -->
+<div class="lt-navbar navbar-fixed">
+  <!-- SubMenu cuidadores -->
+  <ul id="drop-cuidadores" class="dropdown-content">
+    {% if user %}
+    <li><a href="#!">Autocuidados</a></li>
+    <li><a href="#!">Eventos</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Salir</a></li>
+    
+    {% else %}
+    <li><a href="#login-modal" class="lt-modal-trigger modal-trigger">Iniciar Sesi&oacute;n</a></li>
+    <li><a href="{{ 'cuidador_registro'|page }}" class="lt-modal-trigger modal-trigger">Registrarse</a></li>    
+    {% endif %}
+  </ul>
+  <nav class="lt-no-background">
+    <div class="nav-wrapper">
+      <div class="lt-container container">
+        <a href="{{ 'home'|page }}" class="brand-logo white-text">CAPSE</a>
+        <a href="#" data-activates="mobile-menu" class="lt-mobile-toggle button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li class="{% if this.page.id == 'inicio' %}active{% endif %}"><a href="{{ 'inicio'|page }}">Inicio</a></li>
+          <li><a class="dropdown-button" href="#" data-activates="drop-cuidadores">Cuidadores<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class="{% if this.page.id == 'cuidado-pacientes' %}active{% endif %}"><a href="{{ 'cuidado-pacientes'|page }}">Cuidados a Pacientes</a></li>
+          
+          <li class="{% if this.page.id == 'faq' %}active{% endif %}"><a href="{{ 'faq'|page }}">Preguntas Frecuentes</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-menu">
+          <li><i class="material-icons">view_list</i>Menu</li>
+          <li class="divider"></li>
+          <li class="{% if this.page.id == 'inicio' %}active{% endif %}"><a href="{{ 'inicio'|page }}">Inicio</a></li>
+          {% if user %}
+          <li><a href="#!">Autocuidados</a></li>
+          <li><a href="#!">Eventos</a></li>
+          {% else %}
+          <li><a href="#!">Registrarse</a></li>
+          <li><a href="#login-modal">Iniciar Sesi&oacute;n</a></li>
+          {% endif %}
+          <li class="{% if this.page.id == 'cuidado-pacientes' %}active{% endif %}"><a href="{{ 'cuidado-pacientes'|page }}">Cuidados a Pacientes</a></li>
+          <li class="{% if this.page.id == 'faq' %}active{% endif %}"><a href="{{ 'faq'|page }}">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
