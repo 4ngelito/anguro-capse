@@ -1,0 +1,29 @@
+title = "Autocuidados"
+url = "/autocuidados/:page?"
+layout = "defecto"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "autocuidados"
+postsPerPage = 10
+noPostsMessage = "Autocuidado no encontrado"
+sortOrder = "published_at desc"
+categoryPage = "autocuidados"
+postPage = "autocuidado"
+==
+<section id="lt-header" class="lt-section lt-section-fullwidth section">
+  <div class="lt-container container">
+    <div class="lt-content lt-header-content">
+      {% partial "pag-autocuidados/header" %}
+    </div>
+  </div>
+</section>
+
+<section id="lt-mainpage" class="lt-section section">
+  <div class="lt-container container">
+    <div class="lt-content lt-mainpage-content">
+      {% partial "pag-autocuidados/mainpage" %}
+    </div>
+  </div>
+</section>

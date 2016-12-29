@@ -1,0 +1,13 @@
+<div class="lt-row row">
+  <div class="lt-col col s12">
+    {% if post %}
+        <h2>{{ post.title }}</h2>
+
+        {% component 'blogPost' %}
+    {% else %}
+        <h2>Post not found</h2>
+    {% endif %}
+  </div>
+</div>
+
+<div class="lt-vertical-spacer"></div>
