@@ -27,20 +27,20 @@ $(document).ready(function() {
   $('.lt-modal-trigger').leanModal();
 
   // Owl Carousel
-  $('.owl-carousel').owlCarousel({
+/*  $('.owl-carousel').owlCarousel({
       loop:true,
       items: 1,
       center: true
-  });
+  });*/
 
   // Select
   $('select').material_select();
 
   // DatePicker
-  $('.datepicker').pickadate({
+  /* $('.datepicker').pickadate({
     selectMonths: true,
     selectYears: 15
-  });
+  }); */
   
   //menu dropdown  
   $('.dropdown-button').dropdown(); 
