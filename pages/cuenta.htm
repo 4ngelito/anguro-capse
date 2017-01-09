@@ -1,10 +1,13 @@
 title = "Cuenta"
-url = "/cuidador/cuenta"
+url = "/cuidador/cuenta/:code?"
 layout = "defecto"
 is_hidden = 0
 
 [cuentaUsuario]
 paramCode = "code"
+
+[session]
+security = "all"
 ==
 <!-- header -->
 <section id="lt-header" class="lt-section lt-section-fullwidth section">

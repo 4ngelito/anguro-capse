@@ -1,7 +1,10 @@
-title = "Registro Cuidador"
-url = "/cuidador/nuevo"
+title = "prueba"
+url = "/prueba"
 layout = "defecto"
 is_hidden = 0
+
+[cuentaUsuario]
+paramCode = "code"
 ==
 <!-- header -->
 <section id="lt-header" class="lt-section lt-section-fullwidth section">
@@ -10,7 +13,7 @@ is_hidden = 0
       <div class="lt-row row">
       <div class="lt-col col s12">
         <div class="lt-parallax-header parallax-container" style="height: 400px;">
-          <div class="lt-parallax parallax"><img src="{{ 'assets/img/pag/cuidador/header.jpg'|theme }}" alt="image"></div>
+          <div class="lt-parallax parallax"><img src="{{ 'assets/img/pages/home/slideshow/img-01.jpg'|theme }}" alt="image"></div>
           <div class="lt-parallax-content">
             <div class="valign-wrapper" style="height: 400px;">
               <div class="valign">
@@ -33,7 +36,7 @@ is_hidden = 0
         <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">{{ message }}</div>
       {% endflash %}
       
-          {% partial "formulario/registro" %}
+          {% component "cuentaUsuario" %}
     </div>
   </div>
 </section>
