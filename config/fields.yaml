@@ -107,7 +107,7 @@ tabs:
       tab: Assets
       label: OctoberCMS Front-end Javascript Framework
       type: switch
-      default: false
+      default: true
 
     ####################################################
     # Tab: Styles
