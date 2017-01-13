@@ -42,6 +42,13 @@ description = "Plantilla Capse"
     {% endif %}
   </head>
   <body class="lt-theme-{{ this.theme.config.code }} lt-layout-{{ this.layout.id }} lt-page-{{ this.page.id }}">
+    <div id="flash_message">
+      {% flash %}
+        <p data-control="flash-message" data-interval="5" class="{{ type }}">
+          {{ message }}
+        </p>
+      {% endflash %}
+    </div>
     <div id="lt-page-surround">
       <section id="lt-navigation" class="lt-section section lt-no-background">
         <div class="lt-row row">
@@ -78,9 +85,6 @@ description = "Plantilla Capse"
     {% endif %}
 
     {% partial "_addons/js" %}
-    {% if not user %}
-      {% partial "formulario/login" %}
-    {% endif %}
 
     {% scripts %}
 

@@ -26,23 +26,30 @@ $(document).ready(function() {
   // Modal
   $('.lt-modal-trigger').leanModal();
 
-  // Owl Carousel
-/*  $('.owl-carousel').owlCarousel({
-      loop:true,
-      items: 1,
-      center: true
-  });*/
-
   // Select
   $('select').material_select();
-
-  // DatePicker
-  /* $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 15
-  }); */
   
   //menu dropdown  
-  $('.dropdown-button').dropdown(); 
+  $('.dropdown-button').dropdown();
+
+  //ajax response
+
+  function lanzaFlash(event, message, tipo){
+    $.oc.flashMsg({
+        'text': message,
+        'class': tipo,
+        'interval': 3
+    });        
+    // This will stop the default alert() message
+    event.preventDefault();
+  }
+
+  $(window).on('ajaxErrorMessage', function(event, message){
+      lanzaFlash(event, message, 'error');
+  });
+
+  $(window).on('ajaxSuccessMessage', function(event, message){
+      lanzaFlash(event, message, 'success');
+  });
   
 });
