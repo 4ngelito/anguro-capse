@@ -3,8 +3,8 @@
   <!-- SubMenu cuidadores -->
   <ul id="drop-cuidadores" class="dropdown-content">
     {% if user %}
-    <li><a href="#!">Autocuidados</a></li>
-    <li><a href="#!">Eventos</a></li>
+    <li class="{% if this.page.id == 'autocuidados' %}active{% endif %}"><a href="{{ 'autocuidados'|page }}">Autocuidados</a></li>
+    <li class="{% if this.page.id == 'eventos' %}active{% endif %}"><a href="{{ 'eventos'|page }}">Eventos</a></li>
     <li class="divider"></li>
     <li>
       <a class="btn-flat lt-btn-menu pull-left" href="{{ 'cuidador_cuenta'|page }}"><i class="material-icons">settings</i></a>
@@ -22,34 +22,42 @@
         <a href="#" data-activates="mobile-menu" class="lt-mobile-toggle button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li class="{% if this.page.id == 'inicio' %}active{% endif %}"><a href="{{ 'inicio'|page }}">Inicio</a></li>
-          <li class="{% if this.page.id == 'cuidadopacientes' %}active{% endif %}"><a href="{{ 'cuidadopacientes'|page }}">Cuidados a Pacientes</a></li>
-          <li class="{% if this.page.id == 'faq' %}active{% endif %}"><a href="{{ 'faq'|page }}">Preguntas Frecuentes</a></li>
+          <li class="{% if this.page.id == 'cuidado_pacientes' %}active{% endif %}"><a href="{{ 'cuidado_pacientes'|page }}">Cuidados a Pacientes</a></li>
+          <li class="{% if this.page.id == 'faqs' %}active{% endif %}"><a href="{{ 'faqs'|page }}">Preguntas Frecuentes</a></li>
 
           <!-- agregar imagen y nombre de usuario -->
           <li><a class="dropdown-button" href="#" data-activates="drop-cuidadores">Cuidadores<i class="material-icons right">arrow_drop_down</i></a></li>
 
         </ul>
         <ul class="side-nav" id="mobile-menu">
-          <li><i class="material-icons">view_list</i>Menu</li>
-          {% if user %}
+        {% if user %}
           <!-- Agregar imagen y datos del usuario -->
-
-          <li class="divider"></li>
           <li>
-            <a class="btn-flat lt-btn-menu pull-left" href="{{ 'cuidador_cuenta'|page }}"><i class="material-icons">settings</i></a>
-            <a class="btn-flat lt-btn-menu pull-right" href="#!" data-request="onLogout" data-request-data="redirect: '/'" data-attach-loading><i class="material-icons">exit_to_app</i> </a>
-          </li>  
+            <div class="user-info lt-row row valign-wrapper">
+              <div id="user-avatar" class="col s4">
+                <img class="circle responsive-img" src="{{ getUserAvatar(100) }}" title="{{ user.name ~' '~ user.surname }}" alt="{{ 'Avatar de '~user.name }}">
+              </div>
+              <div id="user-data" class="col s7" >
+                <h5>{{ user.name }}</h5>
+              </div>
+            </div>
+          </li>
           <li class="divider"></li>
-          <li><a href="#!">Autocuidados</a></li>
-          <li><a href="#!">Eventos</a></li>
-          {% else %}
-            <li><a href="{{ 'cuidador_cuenta'|page }}#iniciarSesion">Iniciar Sesi&oacute;n</a></li>
-            <li><a href="{{ 'cuidador_cuenta'|page }}#registro">Registrarse</a></li>
-          {% endif %}
-          <li class="divider"></li>
+        {% endif %}
           <li class="{% if this.page.id == 'inicio' %}active{% endif %}"><a href="{{ 'inicio'|page }}">Inicio</a></li>          
-          <li class="{% if this.page.id == 'cuidado-pacientes' %}active{% endif %}"><a href="{{ 'cuidado-pacientes'|page }}">Cuidados a Pacientes</a></li>
-          <li class="{% if this.page.id == 'faq' %}active{% endif %}"><a href="{{ 'faq'|page }}">Preguntas Frecuentes</a></li>
+          <li class="{% if this.page.id == 'cuidado_pacientes' %}active{% endif %}"><a href="{{ 'cuidado_pacientes'|page }}">Cuidados a Pacientes</a></li>        {% if user %}
+          <li class="{% if this.page.id == 'autocuidados' %}active{% endif %}"><a href="{{ 'autocuidados'|page }}">Autocuidados</a></li>
+          <li class="{% if this.page.id == 'eventos' %}active{% endif %}"><a href="{{ 'eventos'|page }}">Eventos</a></li>            
+        {% endif %}
+          <li class="{% if this.page.id == 'faqs' %}active{% endif %}"><a href="{{ 'faqs'|page }}">Preguntas Frecuentes</a></li>
+          <li class="divider"></li>
+        {% if user %}
+          <li class="{% if this.page.id == 'cuidador_cuenta' %}active{% endif %}"><a href="{{ 'cuidador_cuenta'|page }}"><i class="material-icons prefix">settings</i>Configurar cuenta</a></li>
+          <li><a href="#!" data-request="onLogout" data-request-data="redirect: '/'" data-attach-loading><i class="material-icons prefix">exit_to_app</i>Salir </a></li>
+        {% else %}
+          <li><a href="{{ 'cuidador_cuenta'|page }}#iniciarSesion"><i class="material-icons right prefix">input</i>Iniciar Sesi&oacute;n</a></li>
+          <li><a href="{{ 'cuidador_cuenta'|page }}#registro"><i class="material-icons right prefix">perm_identity</i>Registrarse</a></li>
+        {% endif %}
         </ul>
       </div>
     </div>

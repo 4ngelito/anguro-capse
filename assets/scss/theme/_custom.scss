@@ -17,3 +17,20 @@ p.flash-message {
     margin: 0 !important;
     border-radius: 0;
 }
+
+nav .lt-btn-menu {
+    padding: 0 16px;
+}
+
+nav i, nav i.material-icons {
+    height: auto;
+}
+
+nav .user-info {
+    color: darken($lt-primary-color, 25%);
+    margin-top: 10px;
+}
+
+.divider {
+    clear: both;
+}
