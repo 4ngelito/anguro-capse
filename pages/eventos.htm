@@ -1,10 +1,15 @@
-title = "Cuenta"
-url = "/cuidador/cuenta/:code?"
+title = "eventos"
+url = "/eventos/:page?"
 layout = "defecto"
 is_hidden = 0
 
-[cuentaUsuario]
-paramCode = "code"
+[eventos]
+pageNumber = "{{ :page }}"
+eventosPerPage = 10
+noEventosMessage = "Ningun evento encontrado"
+sortOrder = "titulo asc"
+eventoPage = "evento"
+
 ==
 <!-- header -->
 <section id="lt-header" class="lt-section lt-section-fullwidth section">
@@ -33,7 +38,7 @@ paramCode = "code"
   <div class="lt-container container">
     <div class="lt-content lt-mainpage-content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut semper ipsum, ut faucibus magna. Aenean in maximus sem, in tempus tortor. Sed pharetra nisl nisi, quis tincidunt leo suscipit eu. Maecenas tempor placerat erat, ut pellentesque sapien pharetra eu. Suspendisse id nulla non nunc hendrerit porttitor. Praesent eu enim in dolor scelerisque vestibulum quis nec tellus. Cras id nibh vitae quam lacinia scelerisque et at quam. Maecenas feugiat maximus ipsum, vel bibendum tellus faucibus ac.</p>
-          {% component "cuentaUsuario" %}
+          {% component "eventos" %}
     </div>
   </div>
 </section>
