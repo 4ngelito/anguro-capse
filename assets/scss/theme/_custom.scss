@@ -34,3 +34,8 @@ nav .user-info {
 .divider {
     clear: both;
 }
+@media #{$small-and-down}{
+    nav .brand-logo{
+        font-size: 1.5rem;
+    }
+}
