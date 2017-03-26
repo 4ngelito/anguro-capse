@@ -1,0 +1,47 @@
+{% for post in posts %}
+        {% set image = post.featured_images.first %}
+        <div class="row">
+            <div class="col s12">
+                <h3 style="text-transform: capitalize"><a href="{{ post.url }}" >{{ post.title }} <i class="material-icons small">link</i> </a></h3>
+                <p class="valign-wrapper valign info"><i class="material-icons">event</i> {{ post.published_at|date('d M, Y') }} </p>
+            </div>
+            <div class="col s12">
+                <div class="col m4 s12">
+            {% if post.getVideoFrame %}
+                {{ post.getVideoFrame|raw }}
+            {% elseif image %}
+                <img
+                    data-src="{{ image.filename }}"
+                    src="{{ image.path }}"
+                    alt="{{ image.description }}"
+                    style="max-width: 100%" />            
+            {% endif %}
+                </div>
+                <div class="col m8 s12 excerpt">{{ post.summary }}</div>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col s12">
+                {{ noPostsMessage }}
+            </div>
+        </div>
+    {% endfor %}
+
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}

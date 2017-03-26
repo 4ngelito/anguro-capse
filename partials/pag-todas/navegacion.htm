@@ -7,12 +7,12 @@
     <li class="{% if this.page.id == 'eventos' %}active{% endif %}"><a href="{{ 'eventos'|page }}">Eventos</a></li>
     <li class="divider"></li>
     <li>
-      <a class="btn-flat lt-btn-menu pull-left" href="{{ 'cuidador_cuenta'|page }}"><i class="material-icons">settings</i></a>
+      <a class="btn-flat lt-btn-menu pull-left" href="{{ 'cuenta_cuidador'|page }}"><i class="material-icons">settings</i></a>
       <a class="btn-flat lt-btn-menu pull-right" href="#!" data-request="onLogout" data-request-data="redirect: '/'" data-attach-loading><i class="material-icons">exit_to_app</i> </a>
     </li>        
     {% else %}
-    <li><a href="{{ 'cuidador_cuenta'|page }}#iniciarSesion">Iniciar Sesi&oacute;n</a></li>
-    <li><a href="{{ 'cuidador_cuenta'|page }}#registro">Registrarse</a></li>    
+    <li><a href="{{ 'cuenta_cuidador'|page }}">Iniciar Sesi&oacute;n</a></li>
+    <li><a href="{{ 'cuenta_cuidador'|page }}#registro">Registrarse</a></li>    
     {% endif %}
   </ul>
   <nav class="lt-no-background">
@@ -22,7 +22,7 @@
         <a href="#" data-activates="mobile-menu" class="lt-mobile-toggle button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li class="{% if this.page.id == 'inicio' %}active{% endif %}"><a href="{{ 'inicio'|page }}">Inicio</a></li>
-          <li class="{% if this.page.id == 'cuidado_pacientes' %}active{% endif %}"><a href="{{ 'cuidado_pacientes'|page }}">Cuidados a Pacientes</a></li>
+          <li class="{% if this.page.id == 'cuidados' %}active{% endif %}"><a href="{{ 'cuidados'|page }}">Cuidados a Pacientes</a></li>
           <li class="{% if this.page.id == 'faqs' %}active{% endif %}"><a href="{{ 'faqs'|page }}">Preguntas Frecuentes</a></li>
 
           <!-- agregar imagen y nombre de usuario -->
@@ -45,18 +45,18 @@
           <li class="divider"></li>
         {% endif %}
           <li class="{% if this.page.id == 'inicio' %}active{% endif %}"><a href="{{ 'inicio'|page }}">Inicio</a></li>          
-          <li class="{% if this.page.id == 'cuidado_pacientes' %}active{% endif %}"><a href="{{ 'cuidado_pacientes'|page }}">Cuidados a Pacientes</a></li>        {% if user %}
+          <li class="{% if this.page.id == 'cuidados' %}active{% endif %}"><a href="{{ 'cuidados'|page }}">Cuidados a Pacientes</a></li>        {% if user %}
           <li class="{% if this.page.id == 'autocuidados' %}active{% endif %}"><a href="{{ 'autocuidados'|page }}">Autocuidados</a></li>
           <li class="{% if this.page.id == 'eventos' %}active{% endif %}"><a href="{{ 'eventos'|page }}">Eventos</a></li>            
         {% endif %}
           <li class="{% if this.page.id == 'faqs' %}active{% endif %}"><a href="{{ 'faqs'|page }}">Preguntas Frecuentes</a></li>
           <li class="divider"></li>
         {% if user %}
-          <li class="{% if this.page.id == 'cuidador_cuenta' %}active{% endif %}"><a href="{{ 'cuidador_cuenta'|page }}"><i class="material-icons prefix">settings</i>Configurar cuenta</a></li>
+          <li class="{% if this.page.id == 'cuenta_cuidador' %}active{% endif %}"><a href="{{ 'cuidador_cuenta'|page }}"><i class="material-icons prefix">settings</i>Configurar cuenta</a></li>
           <li><a href="#!" data-request="onLogout" data-request-data="redirect: '/'" data-attach-loading><i class="material-icons prefix">exit_to_app</i>Salir </a></li>
         {% else %}
-          <li><a href="{{ 'cuidador_cuenta'|page }}#iniciarSesion"><i class="material-icons right prefix">input</i>Iniciar Sesi&oacute;n</a></li>
-          <li><a href="{{ 'cuidador_cuenta'|page }}#registro"><i class="material-icons right prefix">perm_identity</i>Registrarse</a></li>
+          <li><a href="{{ 'cuenta_cuidador'|page }}"><i class="material-icons right prefix">input</i>Iniciar Sesi&oacute;n</a></li>
+          <li><a href="{{ 'cuenta_cuidador'|page }}#registro"><i class="material-icons right prefix">perm_identity</i>Registrarse</a></li>
         {% endif %}
         </ul>
       </div>

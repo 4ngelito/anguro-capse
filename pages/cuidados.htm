@@ -1,16 +1,17 @@
-title = "Cuidados del Cuidador"
-url = "/autocuidados/:page?"
+title = "Cuidados a Pacientes Postrados"
+url = "/cuidados/:page?"
 layout = "defecto"
 is_hidden = 0
 
-[blogPosts]
+[blogPosts cuidados]
 pageNumber = "{{ :page }}"
-categoryFilter = "autocuidados"
+categoryFilter = "cuidados"
 postsPerPage = 10
-noPostsMessage = "Autocuidado no encontrado"
+noPostsMessage = "Ningún cuidado encontrado"
 sortOrder = "published_at desc"
-categoryPage = "autocuidados"
-postPage = "autocuidado"
+categoryPage = "cuidados"
+postPage = "cuidado"
+
 ==
 {% put styles %}
     <link href="/themes/anguro-capse/assets/css/videosyoutube.css" rel="stylesheet" />
@@ -23,12 +24,12 @@ postPage = "autocuidado"
             <div class="lt-col col s12">
               <div class="lt-parallax-header parallax-container" style="height: 400px;">
                 <div class="lt-parallax parallax">
-                    <img src="{{ 'assets/img/pag/autocuidados/header.jpg'|theme }}" alt="image"></div>
+                    <img src="{{ 'assets/img/pag/cuidados/header.jpg'|theme }}" alt="image"></div>
                   <div class="lt-parallax-content">
                       <div class="valign-wrapper" style="height: 600px;">
                           <div class="valign">
-                              <h2 class="lt-title">Cuidados del Cuidador</h2>
-                              <p class="lt-subtitle flow-text">Consejos para tu salud</p>
+                              <h2 class="lt-title">Cuidados a Pacientes Postrados</h2>
+                              <p class="lt-subtitle flow-text">Consejos para tu labor</p>
                           </div>
                       </div>
                   </div>

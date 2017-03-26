@@ -1,17 +1,17 @@
-title = "Autocuidado"
-url = "/autocuidado/:slug?"
+title = "Cuidado"
+url = "/cuidado/:slug"
 layout = "defecto"
 is_hidden = 0
 
 [blogPost]
 slug = "{{ :slug }}"
-categoryPage = "autocuidado"
+categoryPage = "cuidados"
 ==
 function onStart(){
     $this->addJs('/plugins/anguro/capse/assets/js/evento.js');
 }
 function onEnd(){
-    $this->page->title = ucwords($this->post->title) . ' - Cuidados del Cuidador';
+    $this->page->title = ucwords($this->post->title) . ' - Cuidados a Pacientes Postrados';
 }
 ==
 {% put styles %}
@@ -32,7 +32,7 @@ function onEnd(){
                                  alt="{{ image.description }}"
                                  />
                             {% else %}
-                            <img src="{{ 'assets/img/pag/autocuidados/header.jpg'|theme }}" alt="image">
+                            <img src="{{ 'assets/img/pag/cuidados/header.jpg'|theme }}" alt="image">
                             {% endif %}
                         </div>                        
                         <div class="lt-parallax-content">
@@ -49,7 +49,6 @@ function onEnd(){
         </div>
     </div>
 </section>
-
 <!-- contenido -->
 <section id="lt-mainpage" class="lt-section section">
     <div class="lt-container container">

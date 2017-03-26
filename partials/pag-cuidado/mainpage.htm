@@ -1,0 +1,18 @@
+<div class="content">{{ post.content_html|raw }}</div>
+            {% if post.featured_images.count %}
+            <div class="row">
+                <h3>Galer&iacute;a de Imágenes</h3>
+                <div class="slider col s12">
+                    <ul class="slides">
+                    {% for image in post.featured_images %}
+                        <li>
+                            <img
+                                data-src="{{ image.filename }}"
+                                src="{{ image.path }}"
+                                alt="{{ image.description }}"/>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
